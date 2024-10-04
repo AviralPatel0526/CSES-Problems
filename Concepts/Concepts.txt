@@ -1,0 +1,15 @@
+// Fast Exponention
+
+    static long Fastpow(long a,long n){
+        long ans=1;
+        long mod=1000000007;
+        while(n > 0){
+            if((n&1) != 0){
+                ans=((ans%mod)*(a%mod))%mod;
+            }
+            a=((a%mod)*(a%mod))%mod;
+            n=n>>1;
+        }
+        return ans;
+    }
+
