@@ -13,3 +13,33 @@
         return ans;
     }
 
+
+// Tower of Hanoi
+
+    static void f(int n,String s,String h,String d){
+        if(n == 0){
+            return;
+        }
+        f(n-1,s,d,h);
+        System.out.println(s+" "+d);
+        f(n-1,h,s,d);
+    }
+
+
+// Generating unique permutaions
+
+    static void f(char ch[],int n,String temp,ArrayList<String> list,boolean vis[]){
+        if(temp.length() == n){
+            list.add(temp);
+            return;
+        }
+        for(int k=0;k<n;k++){
+            if(!vis[k]){
+                if (k > 0 && ch[k] == ch[k - 1] && !vis[k - 1]) {
+                    continue;
+                }
+                vis[k]=true;
+                f(ch,n,temp+ch[k],list,vis);
+                vis[k]=false;
+            }
+        }
