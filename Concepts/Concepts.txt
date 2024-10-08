@@ -46,6 +46,13 @@
     }    
 
 
+// lowerbound-The lower bound of a value in a sorted collection is defined as the first element that is greater than or equal to the given value.
+//upperbound-The first element smaller than a given value in a sorted collection is called the upper bound
+
+    Integer upperBoundKey = map.floorKey(b.get(i));
+    Integer lowerBoundKey = map.ceilingKey(b.get(i));
+
+
 // Radix sort - better
 
     import java.util.*;
